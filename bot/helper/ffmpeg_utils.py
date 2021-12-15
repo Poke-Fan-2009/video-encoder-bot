@@ -29,14 +29,14 @@ def encode(filepath):
     # Video transcode options
     if video_codec[0] == 'hevc':
         if video_codec[1] == 'hvc1':
-            print('Skipping: already h265 / hvc1')
+            print('Encoding Your file please wait')
             return None
         else:
             # Copy stream to hvc1
             video_opts = '-c:v copy -tag:v hvc1'
     else:
         # Transcode to h265 / hvc1
-        video_opts = '-c:v libx265 -crf 28 -tag:v hvc1 -preset fast -threads 8'
+        video_opts = '-c:v libx264 -crf 16 -tag:v hvc1 -preset veryslow -threads 8'
     # Get the audio channel codec
     audio_codec = get_codec(filepath, channel='a:0')
     if audio_codec == []:
