@@ -20,7 +20,7 @@
         },
         "DOWNLOAD_DIR": {
             "description": "",
-            "required": "True"
+            "required": "False"
         }
     },
     "formation": {
